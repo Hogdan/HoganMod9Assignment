@@ -5,6 +5,6 @@ public class CharacterDTO
   public List<string> Series { get; set; } = [];
   public string Display()
   {
-    return $"Id: {Id}\nName: {Name}\nSeries: {string.Join(", ", Series)}\n";
+    return $"Name: {Name}\nSeries: {string.Join(", ", Series)}\n";
   }
 }
