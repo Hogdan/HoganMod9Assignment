@@ -188,5 +188,11 @@ Console.Clear();
 // }
 
 // character has alias "Winter Kong"
-bool hasWinterKong = characters.Any(c => c.Alias.Contains("Winter Kong"));
-Console.WriteLine($"Alias \"Winter Kong\" exists = {hasWinterKong}");
+// bool hasWinterKong = characters.Any(c => c.Alias.Contains("Winter Kong"));
+// Console.WriteLine($"Alias \"Winter Kong\" exists = {hasWinterKong}");
+
+// List name and aliases of the character with the alias "Winter Kong"
+foreach(CharacterDTO characterDTO in characters.Where(c => c.Alias.Contains("Winter Kong")).Select(c => new CharacterDTO{ Name = c.Name, Alias = c.Alias}))
+{
+    Console.WriteLine(characterDTO.Display());
+}
