@@ -210,7 +210,10 @@ Console.Clear();
 // Console.WriteLine($"Number of characters in Mario series with species \"Human\" = {characters.Count(c => c.Species == "Human" && c.Series.Contains("Mario"))}");
 
 // List them name only
-foreach(string? name in characters.Where(c => c.Species == "Human" && c.Series.Contains("Mario")).Select(c => c.Name))
-{
-    Console.WriteLine($"{name}");
-}
+// foreach(string? name in characters.Where(c => c.Species == "Human" && c.Series.Contains("Mario")).Select(c => c.Name))
+// {
+//     Console.WriteLine($"{name}");
+// }
+
+// How many Koopas in mario series
+Console.WriteLine($"Number of characters in Mario series with species \"Koopa\" = {characters.Count(c => c.Species == "Koopa" && c.Series.Contains("Mario"))}");
