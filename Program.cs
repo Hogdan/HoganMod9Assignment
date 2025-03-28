@@ -228,7 +228,13 @@ Console.Clear();
 // Console.WriteLine($"Number of characters in Mario series without species \"Human\" or \"Koopa\" = {characters.Count(c => c.Species != "Human" && c.Species != "Koopa" && c.Series.Contains("Mario"))}");
 
 // List them name and species
-foreach(CharacterDTO characterDTO in characters.Where(c => c.Species != "Human" && c.Species != "Koopa" && c.Series.Contains("Mario")).Select(c => new CharacterDTO{ Name = c.Name, Species = c.Species}))
+// foreach(CharacterDTO characterDTO in characters.Where(c => c.Species != "Human" && c.Species != "Koopa" && c.Series.Contains("Mario")).Select(c => new CharacterDTO{ Name = c.Name, Species = c.Species}))
+// {
+//     Console.WriteLine(characterDTO.Display());
+// }
+
+// List the name and species of characters in the DK series who aren't human or kong
+foreach(CharacterDTO characterDTO in characters.Where(c => c.Species != "Human" && c.Species != "Kong" && c.Series.Contains("Donkey Kong")).Select(c => new CharacterDTO{ Name = c.Name, Species = c.Species}))
 {
     Console.WriteLine(characterDTO.Display());
 }
