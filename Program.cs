@@ -139,5 +139,8 @@ Console.Clear();
 // }
 
 // Any characters without an alias?
-bool aliasLess = characters.Any(c => c.Alias.Count() == 0);
-Console.WriteLine($"Character(s) without an alias = {aliasLess}");
+// bool aliasLess = characters.Any(c => c.Alias.Count() == 0);
+// Console.WriteLine($"Character(s) without an alias = {aliasLess}");
+
+// How many?
+Console.WriteLine($"Number of characters without an alias = {characters.Count(c => c.Alias.Count() == 0)}");
