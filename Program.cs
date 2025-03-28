@@ -201,7 +201,10 @@ Console.Clear();
 // Console.WriteLine($"Number of characters with species \"Kremling\" = {characters.Count(c => c.Species == "Kremling")}");
 
 // List them name only
-foreach(string? name in characters.Where(c => c.Species == "Kremling").Select(c => c.Name))
-{
-    Console.WriteLine($"{name}");
-}
+// foreach(string? name in characters.Where(c => c.Species == "Kremling").Select(c => c.Name))
+// {
+//     Console.WriteLine($"{name}");
+// }
+
+// How many characters in mario series with species "Human"?
+Console.WriteLine($"Number of characters in Mario series with species \"Human\" = {characters.Count(c => c.Species == "Human" && c.Series.Contains("Mario"))}");
