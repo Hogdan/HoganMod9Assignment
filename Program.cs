@@ -146,7 +146,11 @@ Console.Clear();
 // Console.WriteLine($"Number of characters without an alias = {characters.Count(c => c.Alias.Count() == 0)}");
 
 // List the characters without an alias by name, series and alias
-foreach(CharacterDTO characterDTO in characters.Where(c => c.Alias.Count() == 0).Select(c => new CharacterDTO{ Name = c.Name, Series = c.Series, Alias = c.Alias}))
-{
-    Console.WriteLine(characterDTO.Display());
-}
+// foreach(CharacterDTO characterDTO in characters.Where(c => c.Alias.Count() == 0).Select(c => new CharacterDTO{ Name = c.Name, Series = c.Series, Alias = c.Alias}))
+// {
+//     Console.WriteLine(characterDTO.Display());
+// }
+
+// Any mario series characters with no alias?
+bool MarioAliasLess = characters.Any(c => c.Alias.Count() == 0 && c.Series.Contains("Mario"));
+Console.WriteLine($"Mario series character(s) without an alias = {MarioAliasLess}");
