@@ -133,7 +133,11 @@ Console.Clear();
 // Console.WriteLine($"Characters first appearing in Donkey Kong 64 - {characters.Count(c => c.FirstAppearance == "Donkey Kong 64")}");
 
 // List them, name only
-foreach(string? name in characters.Where(c => c.FirstAppearance == "Donkey Kong 64").Select(c => c.Name))
-{
-    Console.WriteLine($"\t{name}");
-}
+// foreach(string? name in characters.Where(c => c.FirstAppearance == "Donkey Kong 64").Select(c => c.Name))
+// {
+//     Console.WriteLine($"\t{name}");
+// }
+
+// Any characters without an alias?
+bool aliasLess = characters.Any(c => c.Alias.Count() == 0);
+Console.WriteLine($"Character(s) without an alias = {aliasLess}");
