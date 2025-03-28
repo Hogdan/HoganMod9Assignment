@@ -219,7 +219,10 @@ Console.Clear();
 // Console.WriteLine($"Number of characters in Mario series with species \"Koopa\" = {characters.Count(c => c.Species == "Koopa" && c.Series.Contains("Mario"))}");
 
 // List them name only
-foreach(string? name in characters.Where(c => c.Species == "Koopa" && c.Series.Contains("Mario")).Select(c => c.Name))
-{
-    Console.WriteLine($"{name}");
-}
+// foreach(string? name in characters.Where(c => c.Species == "Koopa" && c.Series.Contains("Mario")).Select(c => c.Name))
+// {
+//     Console.WriteLine($"{name}");
+// }
+
+// how many characters in the mario series are neither human nor koopa
+Console.WriteLine($"Number of characters in Mario series without species \"Human\" or \"Koopa\" = {characters.Count(c => c.Species != "Human" && c.Species != "Koopa" && c.Series.Contains("Mario"))}");
