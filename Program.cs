@@ -198,4 +198,10 @@ Console.Clear();
 // }
 
 // how many characters with species "Kremling"?
-Console.WriteLine($"Number of characters with species \"Kremling\" = {characters.Count(c => c.Species == "Kremling")}");
+// Console.WriteLine($"Number of characters with species \"Kremling\" = {characters.Count(c => c.Species == "Kremling")}");
+
+// List them name only
+foreach(string? name in characters.Where(c => c.Species == "Kremling").Select(c => c.Name))
+{
+    Console.WriteLine($"{name}");
+}
