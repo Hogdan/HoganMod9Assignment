@@ -156,4 +156,10 @@ Console.Clear();
 // Console.WriteLine($"Mario series character(s) without an alias = {MarioAliasLess}");
 
 // How many?
-Console.WriteLine($"Number of Mario series characters without an alias = {characters.Count(c => c.Alias.Count() == 0 && c.Series.Contains("Mario"))}");
+// Console.WriteLine($"Number of Mario series characters without an alias = {characters.Count(c => c.Alias.Count() == 0 && c.Series.Contains("Mario"))}");
+
+// List them, name and alias
+foreach(String? name in characters.Where(c => c.Alias.Count() == 0 && c.Series.Contains("Mario")).Select(c => c.Name))
+{
+    Console.WriteLine($"Name: {name}\nAlias:\n");
+}
