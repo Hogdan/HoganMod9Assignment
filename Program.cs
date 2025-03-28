@@ -178,5 +178,11 @@ Console.Clear();
 // }
 
 // does any character have the alias "Snowmad King"?
-bool hasSnowmadKing = characters.Any(c => c.Alias.Contains("Snowmad King"));
-Console.WriteLine($"Alias \"Snowmad King\" exists = {hasSnowmadKing}");
+// bool hasSnowmadKing = characters.Any(c => c.Alias.Contains("Snowmad King"));
+// Console.WriteLine($"Alias \"Snowmad King\" exists = {hasSnowmadKing}");
+
+// List name and aliases of the character with the alias "Snowmad King"
+foreach(CharacterDTO characterDTO in characters.Where(c => c.Alias.Contains("Snowmad King")).Select(c => new CharacterDTO{ Name = c.Name, Alias = c.Alias}))
+{
+    Console.WriteLine(characterDTO.Display());
+}
