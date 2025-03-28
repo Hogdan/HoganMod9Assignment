@@ -192,7 +192,10 @@ Console.Clear();
 // Console.WriteLine($"Alias \"Winter Kong\" exists = {hasWinterKong}");
 
 // List name and aliases of the character with the alias "Winter Kong"
-foreach(CharacterDTO characterDTO in characters.Where(c => c.Alias.Contains("Winter Kong")).Select(c => new CharacterDTO{ Name = c.Name, Alias = c.Alias}))
-{
-    Console.WriteLine(characterDTO.Display());
-}
+// foreach(CharacterDTO characterDTO in characters.Where(c => c.Alias.Contains("Winter Kong")).Select(c => new CharacterDTO{ Name = c.Name, Alias = c.Alias}))
+// {
+//     Console.WriteLine(characterDTO.Display());
+// }
+
+// how many characters with species "Kremling"?
+Console.WriteLine($"Number of characters with species \"Kremling\" = {characters.Count(c => c.Species == "Kremling")}");
