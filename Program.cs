@@ -172,7 +172,11 @@ Console.Clear();
 // Console.WriteLine($"Number of Donkey Kong series characters without an alias = {characters.Count(c => c.Alias.Count() == 0 && c.Series.Contains("Donkey Kong"))}");
 
 // list them, name and alias
-foreach(String? name in characters.Where(c => c.Alias.Count() == 0 && c.Series.Contains("Donkey Kong")).Select(c => c.Name))
-{
-    Console.WriteLine($"Name: {name}\nAlias:\n");
-}
+// foreach(String? name in characters.Where(c => c.Alias.Count() == 0 && c.Series.Contains("Donkey Kong")).Select(c => c.Name))
+// {
+//     Console.WriteLine($"Name: {name}\nAlias:\n");
+// }
+
+// does any character have the alias "Snowmad King"?
+bool hasSnowmadKing = characters.Any(c => c.Alias.Contains("Snowmad King"));
+Console.WriteLine($"Alias \"Snowmad King\" exists = {hasSnowmadKing}");
