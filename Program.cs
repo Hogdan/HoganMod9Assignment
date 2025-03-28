@@ -216,4 +216,10 @@ Console.Clear();
 // }
 
 // How many Koopas in mario series
-Console.WriteLine($"Number of characters in Mario series with species \"Koopa\" = {characters.Count(c => c.Species == "Koopa" && c.Series.Contains("Mario"))}");
+// Console.WriteLine($"Number of characters in Mario series with species \"Koopa\" = {characters.Count(c => c.Species == "Koopa" && c.Series.Contains("Mario"))}");
+
+// List them name only
+foreach(string? name in characters.Where(c => c.Species == "Koopa" && c.Series.Contains("Mario")).Select(c => c.Name))
+{
+    Console.WriteLine($"{name}");
+}
