@@ -225,4 +225,10 @@ Console.Clear();
 // }
 
 // how many characters in the mario series are neither human nor koopa
-Console.WriteLine($"Number of characters in Mario series without species \"Human\" or \"Koopa\" = {characters.Count(c => c.Species != "Human" && c.Species != "Koopa" && c.Series.Contains("Mario"))}");
+// Console.WriteLine($"Number of characters in Mario series without species \"Human\" or \"Koopa\" = {characters.Count(c => c.Species != "Human" && c.Species != "Koopa" && c.Series.Contains("Mario"))}");
+
+// List them name and species
+foreach(CharacterDTO characterDTO in characters.Where(c => c.Species != "Human" && c.Species != "Koopa" && c.Series.Contains("Mario")).Select(c => new CharacterDTO{ Name = c.Name, Species = c.Species}))
+{
+    Console.WriteLine(characterDTO.Display());
+}
